@@ -10,7 +10,7 @@ IF !ERRORLEVEL! NEQ 0 (
     EXIT /B 1
 )
 
-SET "R2DIST=r2_dist"
+SET "R2DIST=radare2"
 SET "BUILDDIR=build_%PLATFORM%"
 
 

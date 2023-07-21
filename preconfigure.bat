@@ -14,7 +14,7 @@ IF !ERRORLEVEL! NEQ 0 (
 )
 
 SET "PATH=%CD%;%PATH%"
-SET "R2DIST=r2_dist"
+SET "R2DIST=radare2"
 
 @REM ECHO Downloading radare2 (%PLATFORM%)
 @REM rem powershell -command "Invoke-WebRequest 'https://github.com/radareorg/radare2/releases/download/5.1.0/radare2-5.1.0_windows.zip' -OutFile 'radare2-5.1.0_windows.zip'"
@@ -22,9 +22,11 @@ SET "R2DIST=r2_dist"
 @REM python -m wget -o r2.zip https://github.com/radareorg/radare2/releases/download/%R2V%/radare2-%R2V%-w64.zip
 @REM unzip r2.zip
 @REM RENAME radare2-%R2V%-w64 radare2
-RMDIR /S /Q %R2DIST%
-ECHO prepping rdist %R2DIST%
-xCOPY radare2 %R2DIST%\
+@REM RMDIR /S /Q %R2DIST%
+@REM ECHO prepping rdist %R2DIST%
+xCOPY radare2\ %R2DIST%\
+
+MKDIR build_%PLATFORM%"
 SET "PATH=%CD%\%R2DIST%\bin;%PATH%"
 pwd
 dir .
