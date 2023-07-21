@@ -24,9 +24,10 @@ SET "R2DIST=radare2"
 @REM RENAME radare2-%R2V%-w64 radare2
 @REM RMDIR /S /Q %R2DIST%
 @REM ECHO prepping rdist %R2DIST%
-xCOPY radare2\ %R2DIST%\
+@REM XCOPY radare2\ %R2DIST%\
 
-MKDIR build_%PLATFORM%"
+MKDIR build_%ARCH%"
+dir build_%ARCH%"
 SET "PATH=%CD%\%R2DIST%\bin;%PATH%"
 pwd
 dir .
