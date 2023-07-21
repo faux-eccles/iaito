@@ -23,8 +23,12 @@ SET "R2DIST=r2_dist"
 @REM unzip r2.zip
 @REM RENAME radare2-%R2V%-w64 radare2
 RMDIR /S /Q %R2DIST%
-MOVE radare2-%R2V%-w64 %R2DIST%
+ECHO prepping rdist %R2DIST%
+xCOPY radare2 %R2DIST%\
 SET "PATH=%CD%\%R2DIST%\bin;%PATH%"
+pwd
+dir .
+ECHO setting build enviornment
 call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" %ARCH%
 
 rem ECHO Building radare2 (%PLATFORM%)
