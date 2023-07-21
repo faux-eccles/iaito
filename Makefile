@@ -54,7 +54,7 @@ iaito: build
 
 build:
 	mkdir -p build
-	cd build && $(QMAKE) ../src/iaito.pro $(QMAKE_FLAGS)
+	cd build && $(QMAKE) ../src/Iaito.pro $(QMAKE_FLAGS)
 
 install-man:
 	mkdir -p "${DESTDIR}${MANDIR}/man1"

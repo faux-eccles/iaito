@@ -30,9 +30,9 @@ sed \
 	-e "s,^IAITO_VERSION_MAJOR.*,IAITO_VERSION_MAJOR = ${VERSION_MAJOR}," \
 	-e "s,^IAITO_VERSION_MINOR.*,IAITO_VERSION_MINOR = ${VERSION_MINOR}," \
 	-e "s,^IAITO_VERSION_PATCH.*,IAITO_VERSION_PATCH = ${VERSION_PATCH}," \
-< src/iaito.pro > src/iaito.pro.sed
+< src/Iaito.pro > src/Iaito.pro.sed
 
-mv src/iaito.pro.sed src/iaito.pro
+mv src/Iaito.pro.sed src/Iaito.pro
 ${EDITOR} .github/workflows/ci.yml
 echo
 echo "Press enter and add a new changelog entry for the new Flatpak version"
