@@ -7,7 +7,7 @@ MKDIR %BUILDDIR%
 pwd
 dir .
 CD src
-meson configure --buildtype=release ..\%BUILDDIR%
+meson configure --buildtype=release --installation-prefix=..\%BUILDDIR% .
 CD ..\%BUILDDIR%
 ninja -v -j4
 REM IF !ERRORLEVEL! NEQ 0 EXIT /B 1
