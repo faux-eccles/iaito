@@ -1,19 +1,21 @@
-SET "R2DIST=r2_dist"
+SET "R2DIST=radare2"
 SET "BUILDDIR=build_%PLATFORM%"
 
 ECHO Preparing directory
 RMDIR /S /Q %BUILDDIR%
 MKDIR %BUILDDIR%
+pwd
+dir .
 CD src
-meson configure --buildtype=release ..\release
-CD ..\release
+meson configure --buildtype=release ..\%BUILDDIR%
+CD ..\%BUILDDIR%
 ninja -v -j4
 REM IF !ERRORLEVEL! NEQ 0 EXIT /B 1
 CD ..
 
 ECHO Deploying iaito
 MKDIR iaito
-COPY release\iaito.exe iaito\iaito.exe
+COPY %BUILDDIR%\iaito.exe iaito\iaito.exe
 XCOPY /S /I ..\%R2DIST%\share iaito\share
 XCOPY /S /I ..\%R2DIST%\lib iaito\lib
 DEL iaito\lib\*.lib
